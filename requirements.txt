@@ -1,0 +1,6 @@
+# ElasticSearch
+elasticsearch==6.2.0
+elasticsearch-dsl
+
+#MongoDB
+pymongo==3.4.0
