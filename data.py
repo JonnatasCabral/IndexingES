@@ -3,16 +3,7 @@ from abc import ABC, abstractmethod
 import asyncio
 
 
-class RunnerMixin(ABC):
-
-    index = None
-    doc_type = None
-
-    def __init__(self, index, doc_type, *args, **kwargs):
-        self.args = args
-        self.kwargs = kwargs
-        self.index =  index
-        self.doc_type = doc_type
+class Items(ABC):
 
     @abstractmethod
     def get_items(self):
@@ -20,6 +11,9 @@ class RunnerMixin(ABC):
             This method must return a generator of dicts
         """
         pass
+
+
+class Runner(IndexBulk):
 
     def run(self):
         loop = asyncio.get_event_loop()
